@@ -1,0 +1,42 @@
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-20 13:20:32
+project --topLevelPackage com.b2.ankiety --projectName ankiety-roo --java 7 --packaging JAR
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-20 13:20:42
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-20 13:22:26
+jpa setup --database H2_IN_MEMORY --provider HIBERNATE 
+entity jpa --class ~.model.Person 
+entity jpa --class ~.model.Question 
+entity jpa --class ~.model.Division 
+entity jpa --class ~.model.Subdivision 
+entity jpa --class ~.model.Answer 
+entity jpa --class ~.model.Choice 
+entity jpa --class ~.model.Dictionary 
+focus --class ~.model.Division
+field string --fieldName title --notNull
+field set --fieldName subdivisions --type ~.model.Subdivision --cardinality ONE_TO_MANY
+focus --class ~.model.Subdivision
+field string --fieldName title --notNull
+field reference --fieldName division --type ~.model.Division
+field reference --fieldName dictionary --type ~.model.Dictionary
+field set --fieldName questions --type ~.model.Question --cardinality ONE_TO_MANY 
+focus --class ~.model.Question
+field string --fieldName body --notNull
+field reference --fieldName subdivision --type ~.model.Subdivision
+focus --class ~.model.Dictionary
+field string --fieldName description --notNull
+field set --fieldName choices --type ~.model.Choice --cardinality ONE_TO_MANY 
+focus --class ~.model.Choice
+field string --fieldName body --notNull
+field reference --fieldName dictionary --type ~.model.Dictionary
+focus --class ~.model.Answer
+field boolean --fieldName interested --notNull
+field reference --fieldName person --type ~.model.Person
+field reference --fieldName question --type ~.model.Question
+field reference --fieldName choice --type ~.model.Choice
+focus --class ~.model.Person
+field string --fieldName email --notNull --unique true
+json all
+web mvc json setup
+web mvc json all --package ~.web
+web mvc setup
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-20 15:25:45
+web mvc all --package ~.web

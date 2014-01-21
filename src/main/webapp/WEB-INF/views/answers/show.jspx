@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_b2_ankiety_model_Answer" object="${answer}" path="/answers" z="cLA4pxyTtA9C+r8Q+RE43m2QVh8=">
+        <field:display field="interested" id="s_com_b2_ankiety_model_Answer_interested" object="${answer}" z="msy9R4w1OrEPWFcsGQQIqW1Oj7Y="/>
+        <field:display field="person" id="s_com_b2_ankiety_model_Answer_person" object="${answer}" z="DmspIz96lNIUN2W4x/g68WyWRlk="/>
+        <field:display field="question" id="s_com_b2_ankiety_model_Answer_question" object="${answer}" z="UhrXAhJrN30qpePWl3VrXM//Pow="/>
+        <field:display field="choice" id="s_com_b2_ankiety_model_Answer_choice" object="${answer}" z="U9umEXhlG2uMJq0D9N/EZJGm0QE="/>
+    </page:show>
+</div>

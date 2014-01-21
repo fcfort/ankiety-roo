@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_b2_ankiety_model_Choice" object="${choice}" path="/choices" z="V2Z2EpOQBMv8tqd1satoqsimLMQ=">
+        <field:display field="body" id="s_com_b2_ankiety_model_Choice_body" object="${choice}" z="F3+DSaI4kiz+LRdHdbtJUv9mlsA="/>
+        <field:display field="dictionary" id="s_com_b2_ankiety_model_Choice_dictionary" object="${choice}" z="A/Jw/Pxu3CtDFWm6QK9lHiWcpTA="/>
+    </page:show>
+</div>

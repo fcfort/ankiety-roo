@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_b2_ankiety_model_Answer" items="${answers}" z="qcd1NDVc0xYIrhl/ObLksXWqg+I=">
+        <table:table data="${answers}" id="l_com_b2_ankiety_model_Answer" path="/answers" z="lZAoSBBkJCXnef499/zPR8cTu5k=">
+            <table:column id="c_com_b2_ankiety_model_Answer_interested" property="interested" z="ax/JDSl9jlv4oyHAGsHexW9VK5c="/>
+            <table:column id="c_com_b2_ankiety_model_Answer_person" property="person" z="xOslH/j7f4PSKm5WQA1McXn25dY="/>
+            <table:column id="c_com_b2_ankiety_model_Answer_question" property="question" z="marBHwBYPup3LSjpm3wzje5U7+k="/>
+            <table:column id="c_com_b2_ankiety_model_Answer_choice" property="choice" z="dzVQo2tJ9wZUiy4sK/McVoeLx6Y="/>
+        </table:table>
+    </page:list>
+</div>

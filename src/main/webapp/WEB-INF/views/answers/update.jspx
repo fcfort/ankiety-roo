@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_b2_ankiety_model_Answer" modelAttribute="answer" path="/answers" versionField="Version" z="QupXvCv38OxuUbr1cbobLrlNmzs=">
+        <field:checkbox field="interested" id="c_com_b2_ankiety_model_Answer_interested" z="OOLAISi7vVc31BFMxAQ57HI5X3k="/>
+        <field:select field="person" id="c_com_b2_ankiety_model_Answer_person" itemValue="id" items="${people}" path="/people" z="+xHP4+ny5zH0Ecy3ukpXdzUQ7BA="/>
+        <field:select field="question" id="c_com_b2_ankiety_model_Answer_question" itemValue="id" items="${questions}" path="/questions" z="BRbkHD5EIY/5Lcn7OKhbzSk/wms="/>
+        <field:select field="choice" id="c_com_b2_ankiety_model_Answer_choice" itemValue="id" items="${choices}" path="/choices" z="rDwznZVKsgfScUkHenHar+ALs5o="/>
+    </form:update>
+</div>
