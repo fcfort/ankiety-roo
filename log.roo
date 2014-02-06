@@ -40,3 +40,14 @@ web mvc json all --package ~.web
 web mvc setup
 // Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-01-20 15:25:45
 web mvc all --package ~.web
+backup
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-01-20 16:16:21
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-02-06 12:54:22
+security setup
+controller class --class ~.web.FrontendController --preferredMapping /frontend
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-02-06 14:11:25
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log opened at 2014-02-06 14:20:12
+focus --class ~.model.Person
+finder list
+finder add --finderName findPeopleByUsernameEquals
+// Spring Roo 1.2.4.RELEASE [rev 75337cf] log closed at 2014-02-06 14:55:34

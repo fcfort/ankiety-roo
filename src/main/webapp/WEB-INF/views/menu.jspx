@@ -31,5 +31,8 @@
             <menu:item id="i_answer_new" messageCode="global_menu_new" url="/answers?form" z="LPAHG1ylis2IM0UMQllr03koJ9U="/>
             <menu:item id="i_answer_list" messageCode="global_menu_list" url="/answers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="dL/ZrqAaVZpavp9JjLYkQvniPLo="/>
         </menu:category>
+        <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
+            <menu:item id="i_controller__frontendindex_id" messageCode="global_generic" url="/frontend/index" z="yADRXyKd0JJ7hefHZ5a9YTJjUfE="/>
+        </menu:category>
     </menu:menu>
 </div>

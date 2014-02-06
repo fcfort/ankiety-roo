@@ -7,12 +7,12 @@ import com.b2.ankiety.model.Person;
 
 privileged aspect Person_Roo_JavaBean {
     
-    public String Person.getEmail() {
-        return this.email;
+    public String Person.getUsername() {
+        return this.username;
     }
     
-    public void Person.setEmail(String email) {
-        this.email = email;
+    public void Person.setUsername(String username) {
+        this.username = username;
     }
     
 }
