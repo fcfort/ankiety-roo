@@ -4,4 +4,7 @@
     <definition extends="default" name="frontend/index">
         <put-attribute name="body" value="/WEB-INF/views/frontend/index.jspx"/>
     </definition>
+    <definition extends="default" name="frontend/fixtures">
+        <put-attribute name="body" value="/WEB-INF/views/frontend/fixtures.jspx"/>
+    </definition>
 </tiles-definitions>
