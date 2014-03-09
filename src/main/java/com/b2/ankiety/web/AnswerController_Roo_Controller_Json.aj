@@ -4,6 +4,8 @@
 package com.b2.ankiety.web;
 
 import com.b2.ankiety.model.Answer;
+import com.b2.ankiety.model.Person;
+import com.b2.ankiety.model.Question;
 import com.b2.ankiety.web.AnswerController;
 import java.util.List;
 import org.springframework.http.HttpHeaders;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 privileged aspect AnswerController_Roo_Controller_Json {
@@ -78,6 +81,14 @@ privileged aspect AnswerController_Roo_Controller_Json {
         }
         answer.remove();
         return new ResponseEntity<String>(headers, HttpStatus.OK);
+    }
+    
+    @RequestMapping(params = "find=ByQuestionAndPerson", headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> AnswerController.jsonFindAnswersByQuestionAndPerson(@RequestParam("question") Question question, @RequestParam("person") Person person) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+        return new ResponseEntity<String>(Answer.toJsonArray(Answer.findAnswersByQuestionAndPerson(question, person).getResultList()), headers, HttpStatus.OK);
     }
     
 }

@@ -33,6 +33,7 @@
         </menu:category>
         <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
             <menu:item id="i_controller__frontendindex_id" messageCode="global_generic" url="/frontend/index" z="yADRXyKd0JJ7hefHZ5a9YTJjUfE="/>
+            <menu:item id="i_controller__backendindex_id" messageCode="global_generic" url="/backend/index" z="V28BFbSDTHtAINMd5TrXGfAVnCs="/>
         </menu:category>
     </menu:menu>
 </div>

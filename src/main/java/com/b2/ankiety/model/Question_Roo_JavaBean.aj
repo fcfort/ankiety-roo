@@ -3,6 +3,7 @@
 
 package com.b2.ankiety.model;
 
+import com.b2.ankiety.model.Answer;
 import com.b2.ankiety.model.Question;
 import com.b2.ankiety.model.Subdivision;
 
@@ -14,6 +15,14 @@ privileged aspect Question_Roo_JavaBean {
     
     public void Question.setBody(String body) {
         this.body = body;
+    }
+    
+    public Answer Question.getTransientAnswer() {
+        return this.transientAnswer;
+    }
+    
+    public void Question.setTransientAnswer(Answer transientAnswer) {
+        this.transientAnswer = transientAnswer;
     }
     
     public Subdivision Question.getSubdivision() {

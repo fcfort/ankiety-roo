@@ -5,5 +5,6 @@
     <page:show id="ps_com_b2_ankiety_model_Question" object="${question}" path="/questions" z="HgbnWxJPKGKR993Zy+OmUupq/uo=">
         <field:display field="body" id="s_com_b2_ankiety_model_Question_body" object="${question}" z="KScSo8t2Gn3e4rbK+eFDlGNjfp4="/>
         <field:display field="subdivision" id="s_com_b2_ankiety_model_Question_subdivision" object="${question}" z="UGokWd6P//ONTxnzMlRUxhXasdk="/>
+        <field:display field="transientAnswer" id="s_com_b2_ankiety_model_Question_transientAnswer" object="${question}" z="jerP0hSCBn0D8uEY4rYo99cgli0="/>
     </page:show>
 </div>

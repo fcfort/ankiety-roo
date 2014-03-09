@@ -5,6 +5,7 @@
     <form:create id="fc_com_b2_ankiety_model_Question" modelAttribute="question" path="/questions" render="${empty dependencies}" z="2QwvmZRGdyc6SFtoUlevjOzsRkE=">
         <field:input field="body" id="c_com_b2_ankiety_model_Question_body" required="true" z="N5vaVNHFXfCpru/BA6dnu4pC+k4="/>
         <field:select field="subdivision" id="c_com_b2_ankiety_model_Question_subdivision" itemValue="id" items="${subdivisions}" path="/subdivisions" z="/cleFLby23WBax+bGBu4Csuss0U="/>
+        <field:input field="transientAnswer" id="c_com_b2_ankiety_model_Question_transientAnswer" z="pfmFHZU3fDlG2AdQcnfcCm7Ay94="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_b2_ankiety_model_Question" render="${not empty dependencies}" z="SKwdnKeU3XifPVUTuSMBhHlD8SU="/>
 </div>
