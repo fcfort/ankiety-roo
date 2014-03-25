@@ -26,4 +26,8 @@ public class Question {
      */
     @ManyToOne
     private Subdivision subdivision;
+    
+    @Transient
+    private Division division;
+
 }

@@ -1,8 +1,11 @@
 package com.b2.ankiety.web;
 
 import java.security.Principal;
+import java.util.Arrays;
 import java.util.Enumeration;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +17,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.b2.ankiety.AnswerSearchCriteria;
 import com.b2.ankiety.model.Answer;
 import com.b2.ankiety.model.Choice;
 import com.b2.ankiety.model.Division;
@@ -27,10 +32,29 @@ import com.b2.ankiety.model.Subdivision;
 public class FrontendController {
 
 	private static Logger logger = LoggerFactory.getLogger(FrontendController.class);
+
+	@RequestMapping(value = "/szukaj", method = RequestMethod.GET)
+	public String szukaj(ModelMap uiModel, Principal principal, HttpServletResponse response) {
+		List<Division> divisions = Division.findAllDivisionsOrderById();
+    	uiModel.addAttribute("divisions", divisions);
+		return "frontend/search";
+	}
+	
+	@RequestMapping(value = "/szukaj", method = RequestMethod.POST)
+	public String szukajPost(ModelMap uiModel, Principal principal, HttpServletResponse response, HttpServletRequest request) {
+		Set<AnswerSearchCriteria> ids = AnswerSearchCriteria.getSearchIds(request);
+		
+		if (ids.size()==0) {
+			uiModel.put("people", Person.findAllPeople());
+		} else {
+			uiModel.put("people", Person.findPersonsByCriteria(ids));
+		}
+
+		return "frontend/list";
+	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(ModelMap uiModel, Principal principal, HttpServletResponse response) {
-		
 		
 		String username = principal.getName();
 		
@@ -70,8 +94,26 @@ public class FrontendController {
 		String username = principal.getName();
 
 		zapisz(username, request);
-		return "ankieta/post";
+		return "frontend/post";
     }    
+	
+	@RequestMapping(value = "/person", method = RequestMethod.GET)
+	public String person(ModelMap uiModel, @RequestParam(value = "id", required = true) Long id) {
+		Person p = Person.findPerson(id);
+		
+		List<Answer> answers = Answer.findAnswersByPerson(p).getResultList();
+		
+		for (Answer a : answers) {
+			Subdivision s = Subdivision.findSubdivisionsByQuestions(new HashSet<Question>(Arrays.asList(a.getQuestion()))).getSingleResult();
+			//a.getQuestion().setSubdivision(s);
+			a.getQuestion().setDivision(Division.findDivisionsBySubdivisions(new HashSet<Subdivision>(Arrays.asList(s))).getSingleResult());
+		}
+		
+		uiModel.addAttribute("person", p);
+    	uiModel.addAttribute("answers", answers);
+		
+		return "frontend/person";
+	}	
 	
 	private void zapisz(String username, HttpServletRequest request) {
 

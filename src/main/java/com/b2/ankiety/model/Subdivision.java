@@ -12,8 +12,8 @@ import org.springframework.roo.addon.json.RooJson;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord
 @RooJson
+@RooJpaActiveRecord(finders = { "findSubdivisionsByQuestions" })
 public class Subdivision {
 
     /**

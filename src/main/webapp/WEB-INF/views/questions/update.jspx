@@ -6,5 +6,6 @@
         <field:input field="body" id="c_com_b2_ankiety_model_Question_body" required="true" z="N5vaVNHFXfCpru/BA6dnu4pC+k4="/>
         <field:select field="subdivision" id="c_com_b2_ankiety_model_Question_subdivision" itemValue="id" items="${subdivisions}" path="/subdivisions" z="/cleFLby23WBax+bGBu4Csuss0U="/>
         <field:input field="transientAnswer" id="c_com_b2_ankiety_model_Question_transientAnswer" z="pfmFHZU3fDlG2AdQcnfcCm7Ay94="/>
+        <field:input field="division" id="c_com_b2_ankiety_model_Question_division" z="zRJgxn3g/bcVfZtGTpECCgFozNQ="/>
     </form:update>
 </div>

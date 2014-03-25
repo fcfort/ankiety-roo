@@ -4,8 +4,10 @@
 package com.b2.ankiety.web;
 
 import com.b2.ankiety.model.Division;
+import com.b2.ankiety.model.Subdivision;
 import com.b2.ankiety.web.DivisionController;
 import java.util.List;
+import java.util.Set;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 privileged aspect DivisionController_Roo_Controller_Json {
@@ -78,6 +81,14 @@ privileged aspect DivisionController_Roo_Controller_Json {
         }
         division.remove();
         return new ResponseEntity<String>(headers, HttpStatus.OK);
+    }
+    
+    @RequestMapping(params = "find=BySubdivisions", headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> DivisionController.jsonFindDivisionsBySubdivisions(@RequestParam("subdivisions") Set<Subdivision> subdivisions) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+        return new ResponseEntity<String>(Division.toJsonArray(Division.findDivisionsBySubdivisions(subdivisions).getResultList()), headers, HttpStatus.OK);
     }
     
 }

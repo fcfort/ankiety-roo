@@ -4,5 +4,14 @@
     <definition extends="public" name="frontend/index">
         <put-attribute name="body" value="/WEB-INF/views/frontend/index.jspx"/>
     </definition>
+    <definition extends="public" name="frontend/search">
+        <put-attribute name="body" value="/WEB-INF/views/frontend/search.jspx"/>
+    </definition>
+    <definition extends="public" name="frontend/list">
+        <put-attribute name="body" value="/WEB-INF/views/frontend/list.jspx"/>
+    </definition>
+    <definition extends="public" name="frontend/person">
+        <put-attribute name="body" value="/WEB-INF/views/frontend/person.jspx"/>
+    </definition>
 
 </tiles-definitions>

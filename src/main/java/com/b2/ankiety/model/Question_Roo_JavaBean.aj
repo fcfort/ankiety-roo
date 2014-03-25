@@ -4,6 +4,7 @@
 package com.b2.ankiety.model;
 
 import com.b2.ankiety.model.Answer;
+import com.b2.ankiety.model.Division;
 import com.b2.ankiety.model.Question;
 import com.b2.ankiety.model.Subdivision;
 
@@ -31,6 +32,14 @@ privileged aspect Question_Roo_JavaBean {
     
     public void Question.setSubdivision(Subdivision subdivision) {
         this.subdivision = subdivision;
+    }
+    
+    public Division Question.getDivision() {
+        return this.division;
+    }
+    
+    public void Question.setDivision(Division division) {
+        this.division = division;
     }
     
 }

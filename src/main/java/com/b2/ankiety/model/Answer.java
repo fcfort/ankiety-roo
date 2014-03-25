@@ -9,7 +9,7 @@ import org.springframework.roo.addon.json.RooJson;
 @RooJavaBean
 @RooToString
 @RooJson
-@RooJpaActiveRecord(finders = { "findAnswersByQuestionAndPerson" })
+@RooJpaActiveRecord(finders = { "findAnswersByQuestionAndPerson", "findAnswersByPerson" })
 public class Answer {
 
     /**

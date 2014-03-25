@@ -11,6 +11,14 @@ import javax.persistence.TypedQuery;
 
 privileged aspect Answer_Roo_Finder {
     
+    public static TypedQuery<Answer> Answer.findAnswersByPerson(Person person) {
+        if (person == null) throw new IllegalArgumentException("The person argument is required");
+        EntityManager em = Answer.entityManager();
+        TypedQuery<Answer> q = em.createQuery("SELECT o FROM Answer AS o WHERE o.person = :person", Answer.class);
+        q.setParameter("person", person);
+        return q;
+    }
+    
     public static TypedQuery<Answer> Answer.findAnswersByQuestionAndPerson(Question question, Person person) {
         if (question == null) throw new IllegalArgumentException("The question argument is required");
         if (person == null) throw new IllegalArgumentException("The person argument is required");

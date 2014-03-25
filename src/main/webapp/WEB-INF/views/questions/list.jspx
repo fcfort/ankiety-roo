@@ -7,6 +7,7 @@
             <table:column id="c_com_b2_ankiety_model_Question_body" property="body" z="xDFzyaLs/MkTZCtqDcrwIBqB+Fo="/>
             <table:column id="c_com_b2_ankiety_model_Question_subdivision" property="subdivision" z="+LTPAvX+h8EnubZ0RYeQiqewnEA="/>
             <table:column id="c_com_b2_ankiety_model_Question_transientAnswer" property="transientAnswer" z="rd4WIAxeOQSJugk2avc6zXPaERY="/>
+            <table:column id="c_com_b2_ankiety_model_Question_division" property="division" z="ceg4A4j+SRxsWFyTjpNzxMplmj8="/>
         </table:table>
     </page:list>
 </div>

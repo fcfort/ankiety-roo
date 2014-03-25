@@ -83,6 +83,14 @@ privileged aspect AnswerController_Roo_Controller_Json {
         return new ResponseEntity<String>(headers, HttpStatus.OK);
     }
     
+    @RequestMapping(params = "find=ByPerson", headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> AnswerController.jsonFindAnswersByPerson(@RequestParam("person") Person person) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+        return new ResponseEntity<String>(Answer.toJsonArray(Answer.findAnswersByPerson(person).getResultList()), headers, HttpStatus.OK);
+    }
+    
     @RequestMapping(params = "find=ByQuestionAndPerson", headers = "Accept=application/json")
     @ResponseBody
     public ResponseEntity<String> AnswerController.jsonFindAnswersByQuestionAndPerson(@RequestParam("question") Question question, @RequestParam("person") Person person) {
